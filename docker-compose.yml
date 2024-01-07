@@ -10,6 +10,7 @@
 #       POSTGRES_USER: dubciuc
 #       POSTGRES_PASSWORD: dubciuc
 
+
 version: '3'
 services:
    backend:
