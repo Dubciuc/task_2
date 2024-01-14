@@ -1,5 +1,5 @@
 const express = require('express')
-const {Pool} = require('pg')
+const { Pool } = require('pg')
 const multer = require('multer');
 const cors = require('cors')
 const path = require('path');
@@ -9,7 +9,7 @@ const port = 3001
 
 app.use(cors())
 
-const pool = new Pool ({
+const pool = new Pool({
     user: 'dubciuc',
     host: 'localhost',
     database: 'postgres',
@@ -25,6 +25,7 @@ const upload = multer({ storage });
 app.post('/submit-form', async (req, res) => {
     try {
         const userData = req.body;
+
 
         const existingUser = await pool.query('SELECT * FROM log WHERE email = $1 AND password = $2', [userData.email, userData.password]);
 
